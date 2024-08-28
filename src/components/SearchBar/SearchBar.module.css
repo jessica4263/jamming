@@ -1,0 +1,47 @@
+.searchbarContainer{
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchIcon{
+    width: 1.2rem;
+    height:1.2rem;
+    fill:black;
+    stroke: black;
+    stroke-width: 15px;
+    overflow: visible;
+}
+
+.searchBar{
+    border: 2px solid black;
+    width: 22rem;
+    height: 1.9rem;
+    border-radius: .5rem;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    padding-left: .7rem;
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 25.5%;
+    align-items: center;
+}
+
+.searchBtn{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    width: 8rem;
+    height: 1.9rem;
+    border-radius: .5rem;
+    border: 2px solid black;
+    background-color: #1ed760;
+    padding: .3rem;
+}

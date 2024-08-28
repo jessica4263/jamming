@@ -1,0 +1,94 @@
+.albumCover{
+    width: 18rem;
+    height: 16rem;
+    overflow: hidden;
+    object-fit: cover;
+    opacity: 0.8;
+    border-radius: .2rem;
+    padding: 1.5rem;
+}
+
+.iconPlay{
+    width: 2rem;
+    height:2rem;
+    fill:black;
+    stroke: black;
+    stroke-width: 15px;
+    overflow: visible;
+}
+
+.songplayerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    padding-bottom: 1.5rem;
+}
+
+.font{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    line-height: 1.1rem;
+    text-align: center;
+}
+
+.nameSong{
+    font-weight: 500;
+}
+
+.nameArtist{
+    font-size: .9rem;
+}
+
+.nameAlbum{
+    font-size: .9rem;
+}
+
+.tapedContainer{
+    width: auto;
+    position: relative;
+    text-align: center;
+}
+
+.WashitapeIcon{
+    width: 6rem;
+    height:6rem;
+    fill: #f9f6f2;
+    stroke: black;
+    stroke-width: 1rem;
+    position: absolute;
+}
+
+#washi1 {
+    top: 0;
+    left: 0;
+}
+
+#washi2 {
+    top: 0;
+    right: 0;
+    transform: rotate(-90deg);
+}
+
+#washi3 {
+    bottom: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+#washi4 {
+    bottom: 0;
+    right: 0;
+    transform: rotate(-180deg);
+}
+

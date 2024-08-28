@@ -1,0 +1,42 @@
+.icon{
+    width: 1.5rem;
+    height:1.5rem;
+    fill:black;
+    stroke: black;
+    stroke-width: 15px;
+    overflow: visible;
+}
+
+.trackContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: .2rem;
+}
+
+.iconsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+}
+
+.font{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    line-height: 1.1rem;
+}
+
+.nameSong{
+    font-weight: 500;
+}
+
+.nameArtist{
+    font-size: .9rem;
+}
+
+.nameAlbum{
+    font-size: .9rem;
+}
