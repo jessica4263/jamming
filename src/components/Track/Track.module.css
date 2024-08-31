@@ -8,6 +8,12 @@
     stroke: black;
     stroke-width: 15px;
     overflow: visible;
+    cursor: pointer;
+}
+
+.icon:hover{
+    fill:#1ed760;
+    stroke: #1ed760;
 }
 
 .trackContainer{

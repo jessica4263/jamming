@@ -8,12 +8,19 @@ function Playlist() {
   return (
     <div>
       <div className={styles.inputContainer}>
-        <input className={styles.inputPlaylist} placeholder='Write your playlist name..'></input>
-        <EditIcon className={styles.editIcon}/>
+        <input 
+          className={styles.inputPlaylist} 
+          placeholder='Write your playlist name..'
+          name='playlistName'
+          id='playlistName'
+          type= 'text'
+          required
+        />
+        <label htmlFor='playlistName'><EditIcon className={styles.editIcon}/></label>
       </div>
       <Tracklist/>
       <div className={styles.saveBtnContainer}>
-        <button className={styles.saveBtn}>Save to Spotify</button>
+        <button type='submit' className={styles.saveBtn}>Save to Spotify</button>
       </div>
     </div>
   );

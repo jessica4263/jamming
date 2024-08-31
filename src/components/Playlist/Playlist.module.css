@@ -1,10 +1,16 @@
 .editIcon{
     width: 1.3rem;
     height:1.3rem;
-    fill:rgb(180, 178, 178);
-    stroke: rgb(180, 178, 178);
+    fill:gray;
+    stroke: gray;
     stroke-width: 15px;
-    overflow: visible;
+    overflow: visible; 
+    cursor: pointer;
+}
+
+.editIcon:hover{
+    fill:#1ed760;
+    stroke: #1ed760;
 }
 
 .saveBtn{
@@ -17,6 +23,13 @@
     border: 2px solid black;
     background-color: #1ed760;
     padding: .3rem;
+    cursor: pointer;
+}
+
+.saveBtn:hover{
+    border: none;
+    background-color: black;
+    color: white;
 }
 
 .inputContainer{
@@ -34,7 +47,16 @@
     font-size: 1.5rem;
     border: none;
     color: black;
-    line-height: 1rem;
+    line-height: .8rem;
+    overflow: visible;
+}
+
+.inputPlaylist:focus{
+    outline: none;
+}
+
+.inputPlaylist:focus::placeholder{
+    color: transparent;
 }
 
 .saveBtnContainer{

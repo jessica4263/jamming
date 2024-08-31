@@ -14,23 +14,37 @@
     stroke: black;
     stroke-width: 15px;
     overflow: visible;
+    cursor: pointer;
+}
+
+.searchIcon:hover {
+    fill:#1ed760;
+    stroke:#1ed760;
 }
 
 .searchBar{
     border: 2px solid black;
-    width: 22rem;
+    width: 26rem;
     height: 1.9rem;
     border-radius: .5rem;
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     padding-left: .7rem;
+    margin: 0 .8rem 0 2rem;
+}
+
+.searchBar:focus{
+    outline: none;
+}
+
+.searchBar:focus::placeholder{
+    color: transparent;
 }
 
 .inputContainer{
     display: flex;
-    justify-content: space-between;
-    width: 25.5%;
+    width: 28%;
     align-items: center;
 }
 
@@ -44,4 +58,11 @@
     border: 2px solid black;
     background-color: #1ed760;
     padding: .3rem;
+    cursor: pointer;
+}
+
+.searchBtn:hover{
+    border: none;
+    background-color: black;
+    color: white;
 }
