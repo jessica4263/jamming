@@ -29,6 +29,7 @@ export const generateCodeChallenge = async (codeVerifier) => {
 // Function to redirect the user to Spotify's authentication page
 export const redirectToSpotify = async () => {
   const clientId = '15b7fb41cfae4ab08faae46825154140';
+  const clientSecret = '7b0fad9e97784a02810aed2ebd71aaa5';
   const redirectUri = 'http://localhost:3000/callback'; // Update if needed
   const scope = 'user-read-private user-read-email';
 
