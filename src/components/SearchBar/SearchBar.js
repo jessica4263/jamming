@@ -1,74 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import styles from './SearchBar.module.css';
-import { ReactComponent as SearchIcon } from '../../assets/search icon.svg';
-import { redirectToSpotify } from '../Auth';
+import React, { useEffect, useState } from "react";
+
+import { ReactComponent as SearchIcon } from "../../assets/search icon.svg";
+import styles from "./SearchBar.module.css";
 
 function SearchBar() {
-  const [accessToken, setAccessToken] = useState('');
-  const [query, setQuery] = useState('');
+  const [userInput, setUserInput] = useState("");
 
-  useEffect(() => {
-    // Check if there's an access token in localStorage
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      setAccessToken(token);
-    }
-  }, []);
+  console.log("user input", userInput);
 
-  const handleLogin = () => {
-    redirectToSpotify();
-  };
+  const API_URL = "https://api.spotify.com/v1/search";
 
-  const handleSearch = async () => {
-    if (!accessToken) {
-      console.log('No access token found. Redirecting to Spotify...');
-      handleLogin(); // Redirect to Spotify login if no token is available
-      return;
-    }
+  const query = new URLSearchParams({
+    q: `track:${userInput}`,
+    type: "track",
+    limit: "20",
+  });
 
-    // Proceed with the search if the user is authenticated
-    try {
-      console.log('Searching for:', query);
-      const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+  const spotifyToken = localStorage.getItem("spotifyToken");
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Search results:', data); // Process the search results here
-      } else {
-        console.error('Error fetching search results', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+  const getTracks = async () => {
+    const requestUrl = `${API_URL}?${query.toString()}`;
+    const response = await fetch(requestUrl, {
+      headers: {
+        Authorization: `Bearer ${spotifyToken}`,
+      },
+    });
+
+    const data = await response.json();
+    console.log("=====DATA=====", data);
   };
 
   return (
-    <div className={styles.searchbarContainer}> 
-      <div className={styles.inputContainer}>     
-        <input 
-          className={styles.searchBar} 
-          placeholder='Search for songs for your playlist...'
-          name='searchInput'
-          id='searchInput'
-          type='text'
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+    <div className={styles.searchbarContainer}>
+      <div className={styles.inputContainer}>
+        <input
+          className={styles.searchBar}
+          placeholder="Search for songs for your playlist..."
+          name="searchInput"
+          id="searchInput"
+          type="text"
           required
+          onChange={(e) => setUserInput(e.target.value)}
+          value={userInput}
         />
-        <label htmlFor='searchInput'>
-          <SearchIcon className={styles.searchIcon} />
-        </label>
       </div>
-      <button 
-        type='button' 
-        className={styles.searchBtn}
-        onClick={handleSearch}
-      >
+      <button onClick={getTracks} type="button" className={styles.searchBtn}>
         Search
+        <SearchIcon className={styles.searchIcon} />
       </button>
     </div>
   );
