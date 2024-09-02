@@ -3,7 +3,7 @@ import styles from './Track.module.css';
 import { ReactComponent as PlayIcon } from '../../assets/play-button.svg';
 import { ReactComponent as AddIcon } from '../../assets/add-button.svg';
 
-function Track() {
+function Track({ name, artist, album}) {
 
   return (
     <>
@@ -11,9 +11,9 @@ function Track() {
         {/*For every song that appears in the search*/}
         <div className={styles.trackContainer}>
           <div className={styles.font}>
-            <div className={styles.nameSong}>Nombre Cancion</div>
-            <div className={styles.nameArtist}>Nombre Artista</div>
-            <div className={styles.nameAlbum}>Nombre Album</div>
+            <div className={styles.nameSong}>{name}</div>
+            <div className={styles.nameArtist}>{artist}</div>
+            <div className={styles.nameAlbum}>{album}</div>
           </div>
           {/*Buttons add and play*/}
           <div className={styles.iconsContainer}>

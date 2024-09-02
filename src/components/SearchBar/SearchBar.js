@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as SearchIcon } from "../../assets/search icon.svg";
 import styles from "./SearchBar.module.css";
 
-function SearchBar() {
+function SearchBar( {setTracks} ) {
   const [userInput, setUserInput] = useState("");
 
   console.log("user input", userInput);
@@ -13,7 +13,7 @@ function SearchBar() {
   const query = new URLSearchParams({
     q: `track:${userInput}`,
     type: "track",
-    limit: "20",
+    limit: "15",
   });
 
   const spotifyToken = localStorage.getItem("spotifyToken");
@@ -28,6 +28,8 @@ function SearchBar() {
 
     const data = await response.json();
     console.log("=====DATA=====", data);
+    setTracks(data.tracks.items);
+    
   };
 
   return (

@@ -7,6 +7,9 @@ import styles from "./App.module.css";
 
 function App() {
 
+  const [tracks, setTracks] = useState([]);
+  console.log(tracks);
+
   useEffect(() => {
     const getAppToken = async () => {
       const clientId = "15b7fb41cfae4ab08faae46825154140";
@@ -40,9 +43,9 @@ function App() {
     <div>
       <h1 className={styles.Myplaylist}>my playlist</h1>
       {/*Searchbar*/}
-      <SearchBar />
+      <SearchBar setTracks={setTracks} />
       <div className={styles.displayContainer}>
-        <SearchResults />
+        <SearchResults tracks={tracks} />
         <div className={styles.playlistContainer}>
           <SongPlayer />
           {/*New playlist with added songs*/}
