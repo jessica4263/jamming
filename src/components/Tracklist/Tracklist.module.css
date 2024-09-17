@@ -1,32 +1,3 @@
-.icon{
-    width: 1.5rem;
-    height:1.5rem;
-    fill:black;
-    stroke: black;
-    stroke-width: 15px;
-    overflow: visible;
-    cursor: pointer;
-}
-
-.icon:hover{
-    fill: #1ed760;
-    stroke: #1ed760;
-}
-
-.trackContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: .2rem;
-}
-
-.iconsContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 15%;
-    align-items: center;
-}
 
 .font{
     font-family: "Work Sans", sans-serif;
@@ -46,3 +17,33 @@
 .nameAlbum{
     font-size: .9rem;
 }
+
+.trackContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .2rem 0;
+  }
+
+  .iconsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+  }
+  
+  .icon{
+    width: 1.5rem;
+    height:1.5rem;
+    fill:black;
+    stroke: black;
+    stroke-width: 15px;
+    overflow: visible;
+    cursor: pointer;
+  }
+  
+  .icon:hover{
+    fill:#1ed760;
+    stroke: #1ed760;
+  }

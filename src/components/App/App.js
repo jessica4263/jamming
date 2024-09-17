@@ -8,6 +8,8 @@ import styles from "./App.module.css";
 function App() {
 
   const [tracks, setTracks] = useState([]);
+  const [playlistSongs, setPlaylistSongs] = useState([])
+  console.log('PlaylistSONGS ====', playlistSongs)
   console.log(tracks);
 
   useEffect(() => {
@@ -37,7 +39,12 @@ function App() {
     getAppToken();
   }, []);
 
-
+  function addToPlaylist(track) {
+    const songExists = playlistSongs.some((song) => song.id === track.id);
+    if (!songExists) {
+      setPlaylistSongs((prevTracks) => [...prevTracks, track]);
+    }
+  }
 
   return (
     <div>
@@ -45,11 +52,18 @@ function App() {
       {/*Searchbar*/}
       <SearchBar setTracks={setTracks} />
       <div className={styles.displayContainer}>
-        <SearchResults tracks={tracks} />
+        <SearchResults 
+          tracks={tracks} 
+          playlistSongs={playlistSongs} 
+          addToPlaylist={addToPlaylist}
+        />
         <div className={styles.playlistContainer}>
           <SongPlayer />
           {/*New playlist with added songs*/}
-          <Playlist />
+          <Playlist 
+            playlistSongs={playlistSongs}
+            setPlaylistSongs={setPlaylistSongs}
+          />
         </div>
       </div>
     </div>

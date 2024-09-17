@@ -3,22 +3,31 @@ import Tracklist from '../Tracklist/Tracklist';
 import styles from './Playlist.module.css';
 import { ReactComponent as EditIcon } from '../../assets/edit-pencil.svg';
 
-function Playlist() {
+function Playlist({ playlistSongs, setPlaylistSongs }) {
+
+  const [playlistName, setPlaylistName] = useState('')
+  console.log('PLAYLISTNAME', playlistName)
+  
+  function removeSong(songToRemove) {
+    setPlaylistSongs((prevSongs) => prevSongs.filter((song) => song.id !== songToRemove.id));
+  }
 
   return (
     <div>
       <div className={styles.inputContainer}>
-        <input 
-          className={styles.inputPlaylist} 
+        <input
+          className={styles.inputPlaylist}
           placeholder='Write your playlist name..'
           name='playlistName'
           id='playlistName'
-          type= 'text'
+          type='text'
+          value={playlistName}
           required
+          onChange={(e) => setPlaylistName(e.target.value)}
         />
-        <label htmlFor='playlistName'><EditIcon className={styles.editIcon}/></label>
+        <label htmlFor='playlistName'><EditIcon className={styles.editIcon} /></label>
       </div>
-      <Tracklist/>
+      <Tracklist songs={playlistSongs} removeSong={removeSong}/>
       <div className={styles.saveBtnContainer}>
         <button type='submit' className={styles.saveBtn}>Save to Spotify</button>
       </div>
