@@ -2,26 +2,31 @@ import React, { useState } from 'react';
 import styles from './Tracklist.module.css';
 import { ReactComponent as PlayIcon } from '../../assets/play-button.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/delete-button.svg';
+import Track from '../Track/Track';
 
-function Tracklist() {
+function Tracklist({ songs, removeSong }) {
 
   return (
-    <div>
-      <div className={styles.trackContainer}>
-        {/*For every song that appears in the search*/}
-        <div className={styles.font}>
-              <div className={styles.nameSong}>Nombre Cancion</div>
-              <div className={styles.nameArtist}>Nombre Artista</div>
-              <div className={styles.nameAlbum}>Nombre Album</div>
+    <>
+      {songs.map((song) => (
+        <div>
+          <div className={styles.trackContainer}>
+            <Track
+              key={song.id}
+              name={song.name}
+              artist={song.artists[0]?.name}
+              album={song.album.name}
+            />
+            {/*Buttons add and play*/}
+            <div className={styles.iconsContainer}>
+              <PlayIcon className={styles.icon} />
+              <RemoveIcon onClick={() => removeSong(song)} className={styles.icon} />
+            </div>
+          </div>
+          <hr />
         </div>
-        {/*Buttons add and play*/}
-        <div className={styles.iconsContainer}>
-          <PlayIcon className={styles.icon}/>
-          <RemoveIcon className={styles.icon}/>
-        </div>
-      </div>
-      <hr/>
-    </div>
+      ))}
+    </>
   );
 }
 
