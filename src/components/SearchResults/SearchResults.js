@@ -4,12 +4,7 @@ import styles from './SearchResults.module.css';
 import { ReactComponent as PlayIcon } from '../../assets/play-button.svg';
 import { ReactComponent as AddIcon } from '../../assets/add-button.svg';
 
-function SearchResults({ tracks, addToPlaylist }) {
-  console.log('SEARCHRESULT tracks', tracks)
-
-  function playSong(){
-
-  }
+function SearchResults({ tracks, addToPlaylist, handlePlay }) {
 
   return (
     <div className={styles.resultsContainer}>
@@ -23,17 +18,17 @@ function SearchResults({ tracks, addToPlaylist }) {
               key={track.id}
               name={track.name}
               artist={track.artists[0]?.name}
-              album={track.album.name} 
-            /> 
+              album={track.album.name}
+            />
             {/*Buttons add and play*/}
             <div className={styles.iconsContainer}>
-              <PlayIcon onClick={playSong} className={styles.icon} />
+              <PlayIcon onClick={() => handlePlay(track.id)} className={styles.icon} />
               <AddIcon onClick={() => addToPlaylist(track)} className={styles.icon} />
-            </div> 
+            </div>
           </div>
           <hr />
         </div>
-    ))}
+      ))}
     </div>
   );
 }

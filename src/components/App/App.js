@@ -4,13 +4,16 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import SongPlayer from "../SongPlayer/SongPlayer";
 import styles from "./App.module.css";
+import Myplaylist from "../Myplaylists/Myplaylists";
 
 function App() {
 
   const [tracks, setTracks] = useState([]);
   const [playlistSongs, setPlaylistSongs] = useState([])
-  console.log('PlaylistSONGS ====', playlistSongs)
-  console.log(tracks);
+  const [token, setToken] = useState(null)
+  const [trackUrl, setTrackUrl] = useState("");
+  const [myPlaylist, setMyPlaylist] = useState([]);
+  const [playlistName, setPlaylistName] = useState('')
 
   useEffect(() => {
     const getAppToken = async () => {
@@ -34,6 +37,7 @@ function App() {
 
       const data = await response.json();
       localStorage.setItem('spotifyToken', data.access_token)
+      setToken(data.access_token)
 
     };
     getAppToken();
@@ -46,27 +50,50 @@ function App() {
     }
   }
 
+  function handlePlay(songId) {
+    setTrackUrl(`https://open.spotify.com/embed/track/${songId}`)
+  }
+
+  function handleSave(playlistName, playlistSongs) {
+    if (playlistName && playlistSongs) {
+      setMyPlaylist((prevPlaylists) => [...prevPlaylists, { id: prevPlaylists.length + 1, name: playlistName, songs: playlistSongs }]);
+      setPlaylistSongs([]);
+      setPlaylistName('');
+    }
+  }
+
   return (
-    <div>
-      <h1 className={styles.Myplaylist}>my playlist</h1>
-      {/*Searchbar*/}
-      <SearchBar setTracks={setTracks} />
-      <div className={styles.displayContainer}>
-        <SearchResults 
-          tracks={tracks} 
-          playlistSongs={playlistSongs} 
-          addToPlaylist={addToPlaylist}
-        />
-        <div className={styles.playlistContainer}>
-          <SongPlayer />
-          {/*New playlist with added songs*/}
-          <Playlist 
-            playlistSongs={playlistSongs}
-            setPlaylistSongs={setPlaylistSongs}
-          />
+    <>
+      <div>
+        <h1 className={styles.Myplaylist}>my playlist</h1>
+        {/*Searchbar*/}
+        <SearchBar token={token} setTracks={setTracks} />
+        <div className={styles.allContainer}>
+          <div className={styles.displayContainer}>
+            <SearchResults
+              tracks={tracks}
+              playlistSongs={playlistSongs}
+              addToPlaylist={addToPlaylist}
+              handlePlay={handlePlay}
+            />
+            <div className={styles.playlistContainer}>
+              {trackUrl ? <SongPlayer token={token} trackUrl={trackUrl} /> : null}
+              {/*New playlist with added songs*/}
+              <Playlist
+                playlistSongs={playlistSongs}
+                setPlaylistSongs={setPlaylistSongs}
+                handlePlay={handlePlay}
+                handleSave={handleSave}
+                setPlaylistName={setPlaylistName}
+                playlistName={playlistName}
+              />
+            </div>
+          </div>
+          <Myplaylist handlePlay={handlePlay} myPlaylist={myPlaylist} />
         </div>
       </div>
-    </div>
+
+    </>
   );
 }
 

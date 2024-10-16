@@ -3,11 +3,8 @@ import Tracklist from '../Tracklist/Tracklist';
 import styles from './Playlist.module.css';
 import { ReactComponent as EditIcon } from '../../assets/edit-pencil.svg';
 
-function Playlist({ playlistSongs, setPlaylistSongs }) {
+function Playlist({ playlistSongs, setPlaylistSongs, handlePlay, handleSave, setPlaylistName, playlistName }) {
 
-  const [playlistName, setPlaylistName] = useState('')
-  console.log('PLAYLISTNAME', playlistName)
-  
   function removeSong(songToRemove) {
     setPlaylistSongs((prevSongs) => prevSongs.filter((song) => song.id !== songToRemove.id));
   }
@@ -27,9 +24,9 @@ function Playlist({ playlistSongs, setPlaylistSongs }) {
         />
         <label htmlFor='playlistName'><EditIcon className={styles.editIcon} /></label>
       </div>
-      <Tracklist songs={playlistSongs} removeSong={removeSong}/>
+      <Tracklist songs={playlistSongs} removeSong={removeSong} handlePlay={handlePlay} />
       <div className={styles.saveBtnContainer}>
-        <button type='submit' className={styles.saveBtn}>Save to Spotify</button>
+        <button onClick={() => handleSave(playlistName, playlistSongs)} type='submit' className={styles.saveBtn}>Save to My Playlists</button>
       </div>
     </div>
   );

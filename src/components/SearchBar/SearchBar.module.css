@@ -8,8 +8,8 @@
 }
 
 .searchIcon{
-    width: 1.2rem;
-    height:1.2rem;
+    width: .8rem;
+    height:.8rem;
     fill:black;
     stroke: black;
     stroke-width: 15px;
@@ -17,9 +17,12 @@
     cursor: pointer;
 }
 
-.searchIcon:hover {
-    fill:#1ed760;
-    stroke:#1ed760;
+.search_btn_inside{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .searchBar{
@@ -65,4 +68,6 @@
     border: none;
     background-color: black;
     color: white;
+    fill: white;
+    stroke: white;
 }

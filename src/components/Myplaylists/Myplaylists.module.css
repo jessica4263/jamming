@@ -1,0 +1,87 @@
+
+.myPlaylistContainer{
+    background-color: white;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+h2 {
+    font-family: "Borel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;;
+}
+
+.displayName {
+    color:#1ed760 !important;
+    font-size: 2rem !important;
+}
+
+.playlistNames{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1ed760;
+    width: 70%;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: .7rem 1.5rem;
+    font-family: "Work-sans", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.playlistNames:hover {
+    background-color: black;
+    color: white;
+}
+
+.icon{
+    width: 1.5rem;
+    height:1.5rem;
+    fill:black;
+    stroke: black;
+    stroke-width: 15px;
+    overflow: visible;
+    cursor: pointer;
+  }
+  
+  .icon:hover{
+    fill:#1ed760;
+    stroke: #1ed760;
+  }
+
+  .trackContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .2rem 0;
+  }
+
+  .iconsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 5%;
+    align-items: center;
+  }
+
+  .displayContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .playlistNamesContainer{
+    width: 100%;
+  }
+
+  .displayPlaylistsContainer {
+    width: 100%;
+  }

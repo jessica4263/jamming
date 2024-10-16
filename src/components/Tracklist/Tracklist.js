@@ -4,7 +4,7 @@ import { ReactComponent as PlayIcon } from '../../assets/play-button.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/delete-button.svg';
 import Track from '../Track/Track';
 
-function Tracklist({ songs, removeSong }) {
+function Tracklist({ songs, removeSong, handlePlay }) {
 
   return (
     <>
@@ -19,7 +19,7 @@ function Tracklist({ songs, removeSong }) {
             />
             {/*Buttons add and play*/}
             <div className={styles.iconsContainer}>
-              <PlayIcon className={styles.icon} />
+              <PlayIcon onClick={() => handlePlay(song.id)} className={styles.icon} />
               <RemoveIcon onClick={() => removeSong(song)} className={styles.icon} />
             </div>
           </div>
