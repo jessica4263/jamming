@@ -8,10 +8,11 @@ This project is a music search application that utilizes the Spotify API to allo
 
 ## Features
 
-Search for Tracks: Find your favorite songs and albums.
-Play Music: Listen to previews of tracks directly from the app.
-Create Playlists: Add songs to your playlists and save them for later.
-Custom UI: Designed with React, JavaScript, and CSS; includes custom assets like backgrounds and player tapes.
+- **Search for Tracks**: Find your favorite songs and albums.
+- **Play Music**: Listen to previews of tracks directly from the app.
+- **Create Playlists**: Add songs to your playlists and save them for later.
+- **Custom UI**: Designed with React, JavaScript, and CSS; includes custom assets like backgrounds and player tapes.
+
 
 ## Limitations
 
@@ -19,10 +20,10 @@ Due to Spotify's API requirements, users must log in to their accounts to play f
 
 ## Technologies used
 
-React
-JavaScript
-JSX
-CSS
+- React
+- JavaScript
+- JSX
+- CSS
 
 ## Available Scripts
 
