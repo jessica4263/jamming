@@ -1,3 +1,4 @@
+
 .editIcon{
     width: 1.3rem;
     height:1.3rem;
@@ -38,6 +39,7 @@
     width: 100%;
     justify-content: space-between;
     align-content: center;
+    text-wrap: wrap;
 }
 
 .inputPlaylist{
@@ -48,7 +50,7 @@
     border: none;
     color: black;
     line-height: .8rem;
-    overflow: visible;
+    width: 100%
 }
 
 .inputPlaylist:focus{
@@ -57,10 +59,27 @@
 
 .inputPlaylist:focus::placeholder{
     color: transparent;
+    text-wrap: wrap;
+    height: auto;
 }
 
 .saveBtnContainer{
     display: flex;
     justify-content: center;
     padding: 1.5rem 0;
+}
+
+@media screen and (max-width: 320px) {
+    .inputPlaylist {
+        font-size: .85rem;
+    }
+
+    .inputContainer {
+        width: auto;
+    }
+
+    .editIcon{
+        width: .8rem;
+        height:auto;
+    }
 }

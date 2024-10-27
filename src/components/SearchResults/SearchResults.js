@@ -12,7 +12,7 @@ function SearchResults({ tracks, addToPlaylist, handlePlay }) {
       <h2 className={styles.h2}>Results</h2>
       <br />
       {tracks.map((track) => (
-        <div>
+        <div className={styles.trackcompleteCont}>
           <div className={styles.trackContainer}>
             <Track
               key={track.id}

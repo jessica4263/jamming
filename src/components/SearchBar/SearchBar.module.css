@@ -71,3 +71,20 @@
     fill: white;
     stroke: white;
 }
+
+@media screen and (max-width: 320px) {
+    .inputContainer {
+        width: 100%;
+    }
+
+    .searchBar {
+        width: 100%;
+        padding:0;
+        margin:0;
+    }
+
+    .searchbarContainer {
+        margin: 4% 8%;
+        width: auto;
+    }
+}

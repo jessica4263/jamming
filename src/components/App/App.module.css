@@ -79,3 +79,27 @@ table {
     padding: 4% 15% 35%;
 }
 
+@media screen and (max-width: 320px) {
+    .Myplaylist {
+        font-size: 2rem;
+        padding-top: 25%;
+    }
+
+    .displayContainer {
+        flex-wrap: wrap;
+    }
+
+    .playlistContainer {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .allContainer {
+        padding: 4% 8% 35%;
+    }
+
+    body {
+        background-size: 35rem;
+        background-repeat: repeat;
+    }
+}

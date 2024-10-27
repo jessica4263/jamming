@@ -85,3 +85,19 @@ h2 {
   .displayPlaylistsContainer {
     width: 100%;
   }
+
+  @media screen and (max-width: 320px) {
+    .displayContainer {
+      flex-wrap: wrap;
+      min-width: 10rem;;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    .displayName {
+      font-size: 1.3rem !important;
+      margin-top: 20%;
+  }
+  }

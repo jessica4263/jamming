@@ -28,7 +28,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 12%;
   align-items: center;
 }
 
@@ -45,4 +44,20 @@
 .icon:hover{
   fill:#1ed760;
   stroke: #1ed760;
+}
+
+.trackcompleteCont {
+  width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .resultsContainer {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .h2 {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+  }
 }

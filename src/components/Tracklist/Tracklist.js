@@ -9,7 +9,7 @@ function Tracklist({ songs, removeSong, handlePlay }) {
   return (
     <>
       {songs.map((song) => (
-        <div>
+        <div className={styles.tracklistCont}>
           <div className={styles.trackContainer}>
             <Track
               key={song.id}

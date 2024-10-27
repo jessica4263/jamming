@@ -49,3 +49,6 @@
 .nameAlbum{
     font-size: .9rem;
 }
+
+@media screen and (max-width: 320px) {
+}

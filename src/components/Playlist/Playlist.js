@@ -10,7 +10,7 @@ function Playlist({ playlistSongs, setPlaylistSongs, handlePlay, handleSave, set
   }
 
   return (
-    <div>
+    <div className={styles.playlistCont}>
       <div className={styles.inputContainer}>
         <input
           className={styles.inputPlaylist}

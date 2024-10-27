@@ -105,3 +105,25 @@
 }
 
 
+@media screen and (max-width: 320px) {
+    .tapedContainer{
+        width: 131%;
+    }
+    .WashitapeIcon{
+        width: 4rem;
+        height:4rem;
+    }
+
+    #washi1 {
+        top: -35px;
+    }
+    
+    #washi2 {
+        bottom: 35px;
+    }
+
+    .songplayerContainer{
+        height:auto;
+    }
+}
+
