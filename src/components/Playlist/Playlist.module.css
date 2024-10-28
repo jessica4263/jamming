@@ -69,7 +69,7 @@
     padding: 1.5rem 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
     .inputPlaylist {
         font-size: .85rem;
     }

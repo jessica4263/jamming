@@ -86,7 +86,7 @@ h2 {
     width: 100%;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 480px) {
     .displayContainer {
       flex-wrap: wrap;
       min-width: 10rem;;

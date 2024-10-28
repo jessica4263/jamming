@@ -4,7 +4,7 @@
 
 This project is a music search application that utilizes the Spotify API to allow users to search for tracks, display albums, and play music. The app enables users to find their favorite songs, play them, and manage their playlists, despite the limitations imposed by Spotify’s authentication requirements.
 
-**[Live Demo](https://myplaylist-apispotify.netlify.app/)**
+**[Live Demo](https://myplaylist-api-spotify.netlify.app/)**
 
 ## Features
 
